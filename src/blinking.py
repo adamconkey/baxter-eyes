@@ -10,8 +10,7 @@ import baxter_interface
 from sensor_msgs.msg import Image
 from baxter_interface import Limb
 
-_IMAGE_DIR = os.path.abspath('../imgs')
-
+_IMAGE_DIR = os.path.abspath(os.path.join(os.path.realpath(__file__), '../../imgs'))
 
 class BaxterEyes:
 
@@ -56,6 +55,7 @@ class BaxterEyes:
         return img
 
     def _get_img_msg(self, cv2_img):
+        print type(cv2_img)
         msg = cv_bridge.CvBridge().cv2_to_imgmsg(cv2_img)
         return msg
 
