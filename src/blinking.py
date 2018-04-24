@@ -55,7 +55,6 @@ class BaxterEyes:
         return img
 
     def _get_img_msg(self, cv2_img):
-        print type(cv2_img)
         msg = cv_bridge.CvBridge().cv2_to_imgmsg(cv2_img)
         return msg
 
