@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>baxter_eyes</name>
+  <version>0.0.0</version>
+  <description>The baxter_eyes package</description>
+  <maintainer email="adam.conkey@utah.edu">Adam Conkey</maintainer>
+  <license>BSD</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <run_depend>rospy</run_depend>
+  
+  <export></export>
+  
+</package>

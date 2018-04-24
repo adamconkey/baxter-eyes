@@ -44,6 +44,9 @@ class BaxterEyes:
         self.screen_pub.publish(msg)
         rospy.sleep(duration)
 
+    def shutdown(self):
+        rospy.loginfo("[BaxterEyes] Exiting.")
+
     def _get_random_key(self):
         key = np.random.choice(self.options, p=self.probabilities)
         return key
@@ -59,9 +62,11 @@ class BaxterEyes:
 
 if __name__ == '__main__':
     rospy.init_node('blinking')
-    baxter = BaxterEyes()
+    be = BaxterEyes()
+    rospy.on_shutdown(be.shutdown)
 
+    rospy.loginfo("[BaxterEyes] Randomized eye movements are running...")
     while not rospy.is_shutdown():	
-        baxter.change_eyes()
+        be.change_eyes()
 
 
